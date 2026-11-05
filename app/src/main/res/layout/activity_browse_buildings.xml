@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".BrowseBuildings">
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Select A Building"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+      android:id="@+id/button_browse_babbio"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Babbio Center" />
+
+  <Button
+      android:id="@+id/button_browse_gateway_north"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Gateway North" />
+
+  <Button
+      android:id="@+id/button_browse_library"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Library" />
+
+  <Button
+      android:id="@+id/button_back"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Back" />
+
+
+
+
+</LinearLayout>

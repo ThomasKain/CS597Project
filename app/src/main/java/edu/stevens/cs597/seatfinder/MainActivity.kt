@@ -1,6 +1,8 @@
 package edu.stevens.cs597.seatfinder
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +13,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        //button functionalities
+
+        //Find a seat button
+        findViewById<Button>(R.id.button_find_seat).setOnClickListener {
+            startActivity(Intent(this, FindSeatEnterInformationActivity::class.java))
+        }
+
+        //Browse building and seat button
+        findViewById<Button>(R.id.button_browse).setOnClickListener {
+            startActivity(Intent(this, BrowseBuildings::class.java))
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
