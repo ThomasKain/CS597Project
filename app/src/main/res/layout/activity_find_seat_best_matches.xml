@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".FindSeatBestMatches">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Best Seat Matches"
+        />
+
+<!--    show all seats here which should be buttons a map of where they are-->
+
+<!--    these button do nothing right now and are placeholders-->
+    <Button
+        android:id="@+id/button_seat_recommendation1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gateway South Floor 1 Seats 12-13" />
+
+    <Button
+        android:id="@+id/button_seat_recommendation2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Babbio Floor 3 Seats 17-18" />
+
+    <Button
+        android:id="@+id/button_seat_recommendation3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Library Floor 1 Seats 23-24" />
+
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
+</LinearLayout>
