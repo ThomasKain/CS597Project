@@ -23,6 +23,9 @@ data class Seat(
     val isFavorite: Boolean
 )
 
+object SeatSearchResults {
+    var matches: List<List<List<Seat>>> = emptyList()
+}
 
 object GlobalSeatMap {
     private const val GS = "GS"

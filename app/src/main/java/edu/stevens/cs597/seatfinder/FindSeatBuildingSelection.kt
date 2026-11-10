@@ -89,12 +89,9 @@ class FindSeatBuildingSelection : AppCompatActivity() {
             // Toast.makeText(this, "$matches", Toast.LENGTH_LONG).show()
             Toast.makeText(this, "matching groups: $groupCount", Toast.LENGTH_SHORT).show()
 
-            val matchesIntent = Intent(this, FindSeatBestMatches::class.java)
-                .putExtra(EXTRA_MIN_SEATS, seatsNeeded)
-                .putExtra(EXTRA_MAX_NOISE, maxNoiseLevel)
-                .putStringArrayListExtra(EXTRA_BUILDING_IDS, ArrayList(selectedIds))
-
-            startActivity(matchesIntent)
+            // Maya, the search result should be able to be read from any activity file  through global object SeatSearchResults.matches
+            SeatSearchResults.matches = matches
+            startActivity(Intent(this, FindSeatBestMatches::class.java))
         }
 
         //back button
