@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.widget.Spinner
 
 class FindSeatEnterInformationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,44 +32,19 @@ class FindSeatEnterInformationActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
-    fun findSeatGroups(
-        preferredNoiseLevel: Int,
-        seatsNeeded: Int,
-        buildings: List<Building>
-    ): List<List<List<Seat>>> {
-        require(preferredNoiseLevel in 1..5)
-        require(seatsNeeded > 0)
+        findViewById<Button>(R.id.button_submit_seat_reqs).setOnClickListener {
+            val seatsNeeded = findViewById<Spinner>(R.id.spinner_seat_count)
+                .selectedItem.toString().toInt()
 
-        return buildings.map { building ->
-            val groups = mutableListOf<List<Seat>>()
+            val maxNoiseLevel = findViewById<Spinner>(R.id.spinner_noise_level)
+                .selectedItem.toString().toInt()
 
-            for (floor in building.floors) {
-                if (floor.noiseLevel != preferredNoiseLevel) continue
+            val selectionIntent = Intent(this, FindSeatBuildingSelection::class.java)
+                .putExtra(FindSeatBuildingSelection.EXTRA_MIN_SEATS, seatsNeeded)
+                .putExtra(FindSeatBuildingSelection.EXTRA_MAX_NOISE, maxNoiseLevel)
 
-                val availableSeats = floor.seats
-                    .filter { it.isAvailable && it.floorId == floor.id }
-                    .map { seat -> seat.id.toInt() to seat }
-                    .sortedBy { (id, _) -> id }
-
-                var group = mutableListOf<Seat>()
-                var previousId: Int? = null
-
-                for ((id, seat) in availableSeats) {
-                    val previous = previousId
-                    if (previous != null && id.toLong() != previous.toLong() + 1) {
-                        if (group.size >= seatsNeeded) groups.add(group)
-                        group = mutableListOf()
-                    }
-
-                    group.add(seat)
-                    previousId = id
-                }
-
-                if (group.size >= seatsNeeded) groups.add(group)
-            }
-
-            groups
+            startActivity(selectionIntent)
         }
     }
+
 }

@@ -13,6 +13,35 @@
         android:layout_height="wrap_content"
         android:text="Enter Information"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@+id/spinner_seat_count"
+        android:text="Number of seats" />
+
+    <Spinner
+        android:id="@id/spinner_seat_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:entries="@array/seat_count_options"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:labelFor="@+id/spinner_noise_level"
+        android:text="Maximum noise level (1 = quiet, 5 = loud)" />
+
+    <Spinner
+        android:id="@id/spinner_noise_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:entries="@array/noise_level_options"
+        android:spinnerMode="dropdown" />
 
     <Button
         android:id="@+id/button_submit_seat_reqs"

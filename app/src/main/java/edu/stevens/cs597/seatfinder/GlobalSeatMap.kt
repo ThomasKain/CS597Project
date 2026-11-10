@@ -61,7 +61,7 @@ object GlobalSeatMap {
                     label = "Gateway South 2nd Floor",
                     mapImage = "gateway_south_floor2",
                     noiseLevel = 2,
-                    seats = (1..10).map { seatNumber ->
+                    seats = (11..20).map { seatNumber ->
                         Seat(
                             id = seatNumber.toString(),
                             floorId = GS_2,
@@ -100,7 +100,7 @@ object GlobalSeatMap {
                     label = "Gateway North 2nd Floor",
                     mapImage = "gateway_north_floor2",
                     noiseLevel = 3,
-                    seats = (1..10).map { seatNumber ->
+                    seats = (11..20).map { seatNumber ->
                         Seat(
                             id = seatNumber.toString(),
                             floorId = GN_2,
