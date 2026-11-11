@@ -60,7 +60,7 @@ object GlobalSeatMap {
                 Floor(
                     id = GS_2,
                     buildingId = GS,
-                    level = 4,
+                    level = 2,
                     label = "Gateway South 2nd Floor",
                     mapImage = "gateway_south_floor2",
                     noiseLevel = 2,
@@ -99,7 +99,7 @@ object GlobalSeatMap {
                 Floor(
                     id = GN_2,
                     buildingId = GN,
-                    level = 4,
+                    level = 2,
                     label = "Gateway North 2nd Floor",
                     mapImage = "gateway_north_floor2",
                     noiseLevel = 3,
@@ -116,4 +116,11 @@ object GlobalSeatMap {
                 )
         )
     )
+
+    //added for best matched seats and directional map functionality
+    fun GlobalSeatMap.getFloor(floorId: String): Floor? =
+        buildings.flatMap {it.floors}.firstOrNull {it.id == floorId }
+
+    fun GlobalSeatMap.getBuilding(buildingId: String): Building? =
+        buildings.firstOrNull {it.id == buildingId}
 }

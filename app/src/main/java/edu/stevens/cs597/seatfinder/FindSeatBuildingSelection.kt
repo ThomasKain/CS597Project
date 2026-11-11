@@ -89,7 +89,7 @@ class FindSeatBuildingSelection : AppCompatActivity() {
             // Toast.makeText(this, "$matches", Toast.LENGTH_LONG).show()
             Toast.makeText(this, "matching groups: $groupCount", Toast.LENGTH_SHORT).show()
 
-            // Maya, the search result should be able to be read from any activity file  through global object SeatSearchResults.matches
+            // Maya, the search result should be able to be read from any activity file through global object SeatSearchResults.matches
             SeatSearchResults.matches = matches
             startActivity(Intent(this, FindSeatBestMatches::class.java))
         }
