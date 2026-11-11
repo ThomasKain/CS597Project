@@ -4,11 +4,17 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.view.GestureDetector
+import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.withStyledAttributes
 
 class SeatMapView : View {
     private var mapDrawable: Drawable? = null
+    private var offsetX: Float = 0F
+    private var offsetY: Float = 0F
+
+    private lateinit var gestureDetector: GestureDetector
 
     constructor(context: Context) : super(context) {
         init(null, 0)
@@ -29,16 +35,33 @@ class SeatMapView : View {
                 mapDrawable?.callback = this@SeatMapView
             }
         }
+
+        gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+            override fun onDown(e: MotionEvent): Boolean {
+                return true
+            }
+
+            override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float): Boolean {
+                offsetX -= distanceX
+                offsetY -= distanceY
+                invalidate()
+                return true
+            }
+        })
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        return gestureDetector.onTouchEvent(event) || super.onTouchEvent(event)
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         mapDrawable?.let {
-            val left = width / 2 - it.intrinsicWidth / 2
-            val top = height / 2 - it.intrinsicHeight / 2
-            val right = width / 2 + it.intrinsicWidth / 2
-            val bottom = height / 2 + it.intrinsicHeight / 2
+            val left = width / 2 - it.intrinsicWidth / 2 + offsetX.toInt()
+            val top = height / 2 - it.intrinsicHeight / 2 + offsetY.toInt()
+            val right = width / 2 + it.intrinsicWidth / 2 + offsetX.toInt()
+            val bottom = height / 2 + it.intrinsicHeight / 2 + offsetY.toInt()
 
             it.setBounds(left, top, right, bottom)
             it.draw(canvas)
