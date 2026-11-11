@@ -34,11 +34,13 @@ class SeatMapView : View {
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
-        val contentWidth = width - paddingLeft - paddingRight
-        val contentHeight = height - paddingTop - paddingBottom
-
         mapDrawable?.let {
-            it.setBounds(paddingLeft, paddingTop, paddingLeft + contentWidth, paddingTop + contentHeight)
+            val left = width / 2 - it.intrinsicWidth / 2
+            val top = height / 2 - it.intrinsicHeight / 2
+            val right = width / 2 + it.intrinsicWidth / 2
+            val bottom = height / 2 + it.intrinsicHeight / 2
+
+            it.setBounds(left, top, right, bottom)
             it.draw(canvas)
         }
     }
