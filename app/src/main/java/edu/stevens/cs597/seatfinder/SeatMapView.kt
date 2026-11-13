@@ -3,6 +3,8 @@ package edu.stevens.cs597.seatfinder
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
+import android.os.Bundle
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
@@ -11,6 +13,13 @@ import android.view.View
 import androidx.core.content.withStyledAttributes
 
 class SeatMapView : View {
+    companion object {
+        const val OFFSET_X = "offset_x"
+        const val OFFSET_Y = "offset_y"
+        const val SCALE = "scale"
+        const val SUPER = "super"
+    }
+
     private var mapDrawable: Drawable? = null
     private var offsetX: Float = 0F
     private var offsetY: Float = 0F
@@ -82,6 +91,26 @@ class SeatMapView : View {
 
             it.setBounds(left, top, right, bottom)
             it.draw(canvas)
+        }
+    }
+
+    override fun onSaveInstanceState(): Parcelable {
+        val bundle = Bundle()
+        bundle.putFloat(OFFSET_X, offsetX)
+        bundle.putFloat(OFFSET_Y, offsetY)
+        bundle.putFloat(SCALE, scale)
+        bundle.putParcelable(SUPER, super.onSaveInstanceState())
+        return bundle
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        if (state is Bundle) {
+            offsetX = state.getFloat(OFFSET_X)
+            offsetY = state.getFloat(OFFSET_Y)
+            scale = state.getFloat(SCALE)
+            super.onRestoreInstanceState(state.getParcelable(SUPER))
+        } else {
+            super.onRestoreInstanceState(state)
         }
     }
 }

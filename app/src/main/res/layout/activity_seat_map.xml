@@ -9,6 +9,7 @@
 
     <edu.stevens.cs597.seatfinder.SeatMapView
         style="@style/Widget.Theme.SeatFinder.MyView"
+        android:id="@+id/seat_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:mapDrawable="@android:drawable/ic_menu_add" />
