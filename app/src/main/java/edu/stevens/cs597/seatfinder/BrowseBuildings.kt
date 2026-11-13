@@ -15,13 +15,10 @@ class BrowseBuildings : AppCompatActivity() {
         setContentView(R.layout.activity_browse_buildings)
 
         //buttons
-        findViewById<Button>(R.id.button_browse_babbio).setOnClickListener {
-            startActivity(Intent(this, SeatMapActivity::class.java))
-        }
         findViewById<Button>(R.id.button_browse_gateway_north).setOnClickListener {
             startActivity(Intent(this, SeatMapActivity::class.java))
         }
-        findViewById<Button>(R.id.button_browse_library).setOnClickListener {
+        findViewById<Button>(R.id.button_browse_gateway_south).setOnClickListener {
             startActivity(Intent(this, SeatMapActivity::class.java))
         }
 

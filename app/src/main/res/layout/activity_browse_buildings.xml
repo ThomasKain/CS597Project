@@ -19,22 +19,16 @@
       app:layout_constraintTop_toTopOf="parent" />
 
   <Button
-      android:id="@+id/button_browse_babbio"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Babbio Center" />
-
-  <Button
       android:id="@+id/button_browse_gateway_north"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Gateway North" />
 
   <Button
-      android:id="@+id/button_browse_library"
+      android:id="@+id/button_browse_gateway_south"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Library" />
+      android:text="Gateway South" />
 
   <Button
       android:id="@+id/button_back"
