@@ -38,8 +38,8 @@ class SeatMapActivity : AppCompatActivity() {
         val floor1 = building?.floors?.find { floor -> floor.level == 1 }
         val floor2 = building?.floors?.find { floor -> floor.level == 2 }
 
-        floor1SeatMap?.mapDrawableId = floor1?.mapImage ?: 0
-        floor2SeatMap?.mapDrawableId = floor2?.mapImage ?: 0
+        floor1SeatMap?.floor = floor1
+        floor2SeatMap?.floor = floor2
 
         floor1Button?.setOnClickListener {
             selectFloor1()

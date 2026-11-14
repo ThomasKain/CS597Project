@@ -22,7 +22,9 @@ data class Seat(
     val id: String,
     val floorId: String,
     val isAvailable: Boolean,
-    val isFavorite: Boolean
+    val isFavorite: Boolean,
+    val mapX: Int,
+    val mapY: Int
 )
 
 object SeatSearchResults {
@@ -55,7 +57,9 @@ object GlobalSeatMap {
                             id = seatNumber.toString(),
                             floorId = GS_1,
                             isAvailable = seatNumber in 4..6,
-                            isFavorite = false
+                            isFavorite = false,
+                            mapX = if (seatNumber < 6) (146 + 120 * (seatNumber - 1)) else (626 - 120 * (seatNumber - 6)),
+                            mapY = if (seatNumber < 6) 234 else 428
                         )
                     }
                 ),
@@ -71,7 +75,9 @@ object GlobalSeatMap {
                             id = seatNumber.toString(),
                             floorId = GS_2,
                             isAvailable = seatNumber in 11..12 || seatNumber in 18..19,
-                            isFavorite = false
+                            isFavorite = false,
+                            mapX = if (seatNumber < 16) (446 + 120 * (seatNumber - 11)) else (926 - 120 * (seatNumber - 16)),
+                            mapY = if (seatNumber < 16) 234 else 428
                         )
                     }
                 ),
@@ -94,7 +100,9 @@ object GlobalSeatMap {
                             id = seatNumber.toString(),
                             floorId = GN_1,
                             isAvailable = seatNumber in 1..3,
-                            isFavorite = false
+                            isFavorite = false,
+                            mapX = if (seatNumber < 6) (486 + 120 * (seatNumber - 1)) else (966 - 120 * (seatNumber - 6)),
+                            mapY = if (seatNumber < 6) 374 else 548
                         )
                     }
                 ),
@@ -110,7 +118,9 @@ object GlobalSeatMap {
                             id = seatNumber.toString(),
                             floorId = GN_2,
                             isAvailable = seatNumber in 14..18,
-                            isFavorite = false
+                            isFavorite = false,
+                            mapX = if (seatNumber < 16) (126 + 120 * (seatNumber - 11)) else (606 - 120 * (seatNumber - 16)),
+                            mapY = if (seatNumber < 16) 234 else 428
                         )
                     }
                 ),

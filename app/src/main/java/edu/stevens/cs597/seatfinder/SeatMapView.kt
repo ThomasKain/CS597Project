@@ -10,7 +10,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
-import androidx.annotation.DrawableRes
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 
 class SeatMapView : View {
@@ -19,12 +19,13 @@ class SeatMapView : View {
         const val OFFSET_Y = "offset_y"
         const val SCALE = "scale"
         const val SUPER = "super"
+        const val SEAT_ICON_SIZE = 77
     }
 
-    @DrawableRes var mapDrawableId: Int = 0
+    var floor: Floor? = null
         set(value) {
             field = value
-            mapDrawable = AppCompatResources.getDrawable(context, value) as? BitmapDrawable
+            mapDrawable = value?.let { AppCompatResources.getDrawable(context, it.mapImage) as? BitmapDrawable }
             mapDrawable?.callback = this@SeatMapView
         }
 
@@ -51,6 +52,17 @@ class SeatMapView : View {
     private fun init() {
         gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean {
+                return true
+            }
+
+            override fun onSingleTapUp(e: MotionEvent): Boolean {
+                floor?.let { it.seats.find { seat ->
+                    val (x, y) = screenToBitmap(e.x, e.y)
+                    x > seat.mapX && x < seat.mapX + SEAT_ICON_SIZE && y > seat.mapY && y < seat.mapY + SEAT_ICON_SIZE
+                }?.let { seat ->
+                    // TODO: Show seat info/favorite dialog here.
+                    Toast.makeText(context, "Hello from seat " + seat.id + "!", Toast.LENGTH_SHORT).show()
+                } }
                 return true
             }
 
@@ -81,6 +93,15 @@ class SeatMapView : View {
         return Pair(
             (x - mapWidth / 2) * scale + width / 2 + offsetX,
             (y - mapHeight / 2) * scale + height / 2 + offsetY
+        )
+    }
+
+    private fun screenToBitmap(x: Float, y: Float): Pair<Int, Int> {
+        val mapWidth = mapDrawable?.bitmap?.width ?: 0
+        val mapHeight = mapDrawable?.bitmap?.height ?: 0
+        return Pair(
+            ((x - width / 2 - offsetX) / scale + mapWidth / 2).toInt(),
+            ((y - height / 2 - offsetY) / scale + mapHeight / 2).toInt()
         )
     }
 
