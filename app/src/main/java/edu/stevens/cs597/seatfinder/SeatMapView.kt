@@ -2,7 +2,7 @@ package edu.stevens.cs597.seatfinder
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.drawable.Drawable
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.AttributeSet
@@ -24,11 +24,11 @@ class SeatMapView : View {
     @DrawableRes var mapDrawableId: Int = 0
         set(value) {
             field = value
-            mapDrawable = AppCompatResources.getDrawable(context, value)
+            mapDrawable = AppCompatResources.getDrawable(context, value) as? BitmapDrawable
             mapDrawable?.callback = this@SeatMapView
         }
 
-    private var mapDrawable: Drawable? = null
+    private var mapDrawable: BitmapDrawable? = null
     private var offsetX: Float = 0F
     private var offsetY: Float = 0F
     private var scale: Float = 1F
@@ -75,6 +75,15 @@ class SeatMapView : View {
         })
     }
 
+    private fun bitmapToScreen(x: Int, y: Int): Pair<Float, Float> {
+        val mapWidth = mapDrawable?.bitmap?.width ?: 0
+        val mapHeight = mapDrawable?.bitmap?.height ?: 0
+        return Pair(
+            (x - mapWidth / 2) * scale + width / 2 + offsetX,
+            (y - mapHeight / 2) * scale + height / 2 + offsetY
+        )
+    }
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val gestureHandled = gestureDetector.onTouchEvent(event)
         val scaleGestureHandled = scaleGestureDetector.onTouchEvent(event)
@@ -85,12 +94,9 @@ class SeatMapView : View {
         super.onDraw(canvas)
 
         mapDrawable?.let {
-            val left = (width / 2 - scale * it.intrinsicWidth / 2 + offsetX).toInt()
-            val top = (height / 2 - scale * it.intrinsicHeight / 2 + offsetY).toInt()
-            val right = (width / 2 + scale * it.intrinsicWidth / 2 + offsetX).toInt()
-            val bottom = (height / 2 + scale * it.intrinsicHeight / 2 + offsetY).toInt()
-
-            it.setBounds(left, top, right, bottom)
+            val (left, top) = bitmapToScreen(0, 0)
+            val (right, bottom) = bitmapToScreen(it.bitmap.width, it.bitmap.height)
+            it.setBounds(left.toInt(), top.toInt(), right.toInt(), bottom.toInt())
             it.draw(canvas)
         }
     }
