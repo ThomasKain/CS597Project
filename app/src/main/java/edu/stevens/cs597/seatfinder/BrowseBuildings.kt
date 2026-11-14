@@ -16,10 +16,14 @@ class BrowseBuildings : AppCompatActivity() {
 
         //buttons
         findViewById<Button>(R.id.button_browse_gateway_north).setOnClickListener {
-            startActivity(Intent(this, SeatMapActivity::class.java))
+            val intent = Intent(this, SeatMapActivity::class.java)
+            intent.putExtra(SeatMapActivity.BUILDING, "GN")
+            startActivity(intent)
         }
         findViewById<Button>(R.id.button_browse_gateway_south).setOnClickListener {
-            startActivity(Intent(this, SeatMapActivity::class.java))
+            val intent = Intent(this, SeatMapActivity::class.java)
+            intent.putExtra(SeatMapActivity.BUILDING, "GS")
+            startActivity(intent)
         }
 
         //back button

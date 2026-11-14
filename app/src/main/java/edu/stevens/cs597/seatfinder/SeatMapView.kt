@@ -10,7 +10,8 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
-import androidx.core.content.withStyledAttributes
+import androidx.annotation.DrawableRes
+import androidx.appcompat.content.res.AppCompatResources
 
 class SeatMapView : View {
     companion object {
@@ -19,6 +20,13 @@ class SeatMapView : View {
         const val SCALE = "scale"
         const val SUPER = "super"
     }
+
+    @DrawableRes var mapDrawableId: Int = 0
+        set(value) {
+            field = value
+            mapDrawable = AppCompatResources.getDrawable(context, value)
+            mapDrawable?.callback = this@SeatMapView
+        }
 
     private var mapDrawable: Drawable? = null
     private var offsetX: Float = 0F
@@ -29,25 +37,18 @@ class SeatMapView : View {
     private lateinit var scaleGestureDetector: ScaleGestureDetector
 
     constructor(context: Context) : super(context) {
-        init(null, 0)
+        init()
     }
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        init(attrs, 0)
+        init()
     }
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        init(attrs, defStyleAttr)
+        init()
     }
 
-    private fun init(attrs: AttributeSet?, defStyleAttr: Int) {
-        context.withStyledAttributes(attrs, R.styleable.SeatMapView, defStyleAttr, 0) {
-            if (hasValue(R.styleable.SeatMapView_mapDrawable)) {
-                mapDrawable = getDrawable(R.styleable.SeatMapView_mapDrawable)
-                mapDrawable?.callback = this@SeatMapView
-            }
-        }
-
+    private fun init() {
         gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean {
                 return true

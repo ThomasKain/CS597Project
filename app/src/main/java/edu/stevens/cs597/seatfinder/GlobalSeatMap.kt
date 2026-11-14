@@ -1,5 +1,7 @@
 package edu.stevens.cs597.seatfinder
 
+import androidx.annotation.DrawableRes
+
 data class Building(
     val id: String,
     val name: String,
@@ -11,7 +13,7 @@ data class Floor(
     val buildingId: String,
     val level: Int,
     val label: String,
-    val mapImage: String,
+    @param:DrawableRes val mapImage: Int,
     val noiseLevel: Int,
     val seats: List<Seat>
 )
@@ -46,7 +48,7 @@ object GlobalSeatMap {
                     buildingId = GS,
                     level = 1,
                     label = "Gateway South 1st Floor",
-                    mapImage = "gateway_south_floor1",
+                    mapImage = R.drawable.gateway_south_floor1,
                     noiseLevel = 2,
                     seats = (1..10).map { seatNumber ->
                         Seat(
@@ -60,9 +62,9 @@ object GlobalSeatMap {
                 Floor(
                     id = GS_2,
                     buildingId = GS,
-                    level = 4,
+                    level = 2,
                     label = "Gateway South 2nd Floor",
-                    mapImage = "gateway_south_floor2",
+                    mapImage = R.drawable.gateway_south_floor2,
                     noiseLevel = 2,
                     seats = (11..20).map { seatNumber ->
                         Seat(
@@ -85,7 +87,7 @@ object GlobalSeatMap {
                     buildingId = GN,
                     level = 1,
                     label = "Gateway North 1st Floor",
-                    mapImage = "gateway_north_floor1",
+                    mapImage = R.drawable.gateway_north_floor1,
                     noiseLevel = 5,
                     seats = (1..10).map { seatNumber ->
                         Seat(
@@ -99,9 +101,9 @@ object GlobalSeatMap {
                 Floor(
                     id = GN_2,
                     buildingId = GN,
-                    level = 4,
+                    level = 2,
                     label = "Gateway North 2nd Floor",
-                    mapImage = "gateway_north_floor2",
+                    mapImage = R.drawable.gateway_north_floor2,
                     noiseLevel = 3,
                     seats = (11..20).map { seatNumber ->
                         Seat(

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -17,15 +16,13 @@
             style="@style/Widget.Theme.SeatFinder.MyView"
             android:id="@+id/floor_1_seat_map"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:mapDrawable="@drawable/gateway_north_floor1" />
+            android:layout_height="match_parent" />
 
         <edu.stevens.cs597.seatfinder.SeatMapView
             style="@style/Widget.Theme.SeatFinder.MyView"
             android:id="@+id/floor_2_seat_map"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:mapDrawable="@drawable/gateway_north_floor2" />
+            android:layout_height="match_parent" />
     </FrameLayout>
 
     <LinearLayout

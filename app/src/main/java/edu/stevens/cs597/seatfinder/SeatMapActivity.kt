@@ -9,6 +9,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SeatMapActivity : AppCompatActivity() {
+    companion object {
+        const val BUILDING = "building"
+    }
+
     private var floor1SeatMap: SeatMapView? = null
     private var floor2SeatMap: SeatMapView? = null
     private var floor1Button: Button? = null
@@ -28,6 +32,14 @@ class SeatMapActivity : AppCompatActivity() {
         floor2SeatMap = findViewById(R.id.floor_2_seat_map)
         floor1Button = findViewById(R.id.floor1_button)
         floor2Button = findViewById(R.id.floor2_button)
+
+        val buildingId = intent.getStringExtra(BUILDING)
+        val building = GlobalSeatMap.buildings.find { building -> building.id == buildingId }
+        val floor1 = building?.floors?.find { floor -> floor.level == 1 }
+        val floor2 = building?.floors?.find { floor -> floor.level == 2 }
+
+        floor1SeatMap?.mapDrawableId = floor1?.mapImage ?: 0
+        floor2SeatMap?.mapDrawableId = floor2?.mapImage ?: 0
 
         floor1Button?.setOnClickListener {
             selectFloor1()

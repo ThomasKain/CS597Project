@@ -1,5 +1,0 @@
-<resources>
-    <declare-styleable name="SeatMapView">
-        <attr name="mapDrawable" format="color|reference" />
-    </declare-styleable>
-</resources>
