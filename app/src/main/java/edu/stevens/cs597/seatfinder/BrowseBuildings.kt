@@ -1,5 +1,6 @@
 package edu.stevens.cs597.seatfinder
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +15,16 @@ class BrowseBuildings : AppCompatActivity() {
         setContentView(R.layout.activity_browse_buildings)
 
         //buttons
+        findViewById<Button>(R.id.button_browse_gateway_north).setOnClickListener {
+            val intent = Intent(this, SeatMapActivity::class.java)
+            intent.putExtra(SeatMapActivity.BUILDING, "GN")
+            startActivity(intent)
+        }
+        findViewById<Button>(R.id.button_browse_gateway_south).setOnClickListener {
+            val intent = Intent(this, SeatMapActivity::class.java)
+            intent.putExtra(SeatMapActivity.BUILDING, "GS")
+            startActivity(intent)
+        }
 
         //back button
         findViewById<Button>(R.id.button_back).setOnClickListener {
