@@ -43,12 +43,7 @@ class FindSeatFloorLayout : AppCompatActivity() {
                     "Seat ${seatIds.first()}"
             }
 
-            val resId = resources.getIdentifier(floor.mapImage, "drawable", packageName)
-            if (resId != 0) {
-                image.setImageResource(resId)
-            } else {
-                seats.text = "No map image for ${floor.mapImage}"
-            }
+            image.setImageResource(floor.mapImage)
         }
 
         //send same information to directional layout page to make sure the right map shows up
