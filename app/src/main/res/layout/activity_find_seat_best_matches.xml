@@ -15,25 +15,19 @@
         />
 
 <!--    show all seats here which should be buttons a map of where they are-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-<!--    these button do nothing right now and are placeholders-->
-    <Button
-        android:id="@+id/button_seat_recommendation1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gateway South Floor 1 Seats 12-13" />
+        <LinearLayout
+            android:id="@+id/results_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal" />
+    </ScrollView>
 
-    <Button
-        android:id="@+id/button_seat_recommendation2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Babbio Floor 3 Seats 17-18" />
-
-    <Button
-        android:id="@+id/button_seat_recommendation3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Library Floor 1 Seats 23-24" />
 
     <Button
         android:id="@+id/button_back"
