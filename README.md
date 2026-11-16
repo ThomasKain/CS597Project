@@ -1,13 +1,44 @@
-Prototype tasks:
+# CS597 Project Prototype
+
+## Prototype tasks:
 1. Locate two open seats together to study with a friend.
+- Specifc Demo Task: Locate 2 seats with a noise level of 2 in Gateway South.
 2. View information about a building’s seating availability.
 3. Get notified when a specific seat is avaiable.
 
-How to open prototype:
-1. ** do we just wanna tell people to clone the code?
+## Setup
 
-Team Contribution Statement:
-- Maya:
+### 1. Clone the repository
+
+Open a terminal in the folder where you want the project to live, then run:
+
+```
+git clone https://github.com/ThomasKain/CS597Project.git
+```
+
+You can also clone from inside Android Studio: on the Welcome screen choose Get from VCS, paste the URL above, and click Clone.
+
+### 2. Open the project
+
+If you cloned from a terminal, open Android Studio and choose File > Open, then select the `CS597Project` folder (the one containing the `build.gradle` or `build.gradle.kts` file).
+
+### 3. Sync Gradle
+
+Go to File > Sync Project with Gradle Files. Wait for the sync to finish (watch the progress bar at the bottom of the window). If Android Studio prompts you to install missing SDK platforms or build tools, accept and install them.
+
+## Running the App
+
+1. In the top toolbar, make sure `app` is selected in the run configuration dropdown.
+2. Select a target device in the device dropdown next to it.
+3. Click the green Run button (the triangle next to `app`).
+4. If no emulator is available or running:
+   1. Open Device Manager from the right-hand panel.
+   2. Click Create Device if none exist, and choose a device definition and a system image (API level [fill in minimum SDK, e.g. 24] or higher).
+   3. Click the play icon next to the device to start it, then run the app again.
+5. If the app does not open automatically on the emulator, find its icon in the app drawer and open it manually.
+
+## Team Contribution Statement:
+- Maya: Created the initial skeleton that included page navigation to and from each page. Took Tanav’s seat matching algorithm and made a display for the matched seats that take you to the next page depending on which seat you click. Then created the seat layout page with dummy maps (added by Thomas later) and the directional layout page and map. Took notes for our second meeting. 
 - Thomas: 
 - Tanav: 
 - Jessica: Contributed to task 2; Worked on layout and logic for the View Buildings path; Building Busyness layout 
