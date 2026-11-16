@@ -11,4 +11,4 @@ Team Contribution Statement:
 - Thomas: 
 - Tanav: 
 - Jessica: Contributed to task 2; Worked on layout and logic for the View Buildings path; Building Busyness layout 
-- Hanqing: 
+- Hanqing: Contributed to task 3; Created the floor map images for two buildings; Built the seat detail page that opens when tapping a seat on the map, with a Notifiy button and an info button
