@@ -40,7 +40,7 @@ Go to File > Sync Project with Gradle Files. Wait for the sync to finish (watch 
 
 ## Team Contribution Statement:
 - Maya: Created the initial skeleton that included page navigation to and from each page. Contributed to task 1: Took Tanav’s seat matching algorithm and made a display for the matched seats that take you to the next page depending on which seat you click. Then created the seat layout page with dummy maps (added by Thomas later) and the directional layout page and map. Took notes for our second meeting. 
-- Thomas: 
+- Thomas: Created the GitHub repo and initial template. Contributed to task 3; implemented the main View Buildings menu and its per-building/floor seat maps (incl. interactivity, zooming, panning).
 - Tanav: 
 - Jessica: Contributed to task 2; Worked on layout and logic for the View Buildings path; Building Busyness layout 
 - Hanqing: Contributed to task 3; Created the floor map images for two buildings; Built the seat detail page that opens when tapping a seat on the map, with a Notifiy button and an info button
