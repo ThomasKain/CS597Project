@@ -1,11 +1,13 @@
 # CS597 Project Prototype
 
-## Prototype tasks:
+## Prototype Tasks
+
 1. Locate two open seats together to study with a friend.
-- Specifc Demo Task: Locate 2 seats with a noise level of 2 in Gateway South.
+   - Specific Demo Task: Locate 2 seats with a noise level of 2 or less in Gateway South.
 2. View information about a building’s seating availability.
+   - Specific Demo Task: Find out how many seats are available on Gateway North's 2nd floor.
 3. Get notified when a specific seat is available.
-- Specific Demo Task: Favorite a seat. 
+   - Specific Demo Task: Favorite a seat. 
 
 ## Setup
 
@@ -38,7 +40,8 @@ Go to File > Sync Project with Gradle Files. Wait for the sync to finish (watch 
    3. Click the play icon next to the device to start it, then run the app again.
 5. If the app does not open automatically on the emulator, find its icon in the app drawer and open it manually.
 
-## Team Contribution Statement:
+## Team Contribution Statement
+
 - Maya: Created the initial skeleton that included page navigation to and from each page. Contributed to task 1: Took Tanav’s seat matching algorithm and made a display for the matched seats that take you to the next page depending on which seat you click. Then created the seat layout page with dummy maps (added by Thomas later) and the directional layout page and map. Took notes for our second meeting. 
 - Thomas: Created the GitHub repo and initial template. Contributed to task 3; implemented the main View Buildings menu and its per-building/floor seat maps (incl. interactivity, zooming, panning).
 - Tanav: 
