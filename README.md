@@ -38,7 +38,7 @@ Go to File > Sync Project with Gradle Files. Wait for the sync to finish (watch 
 5. If the app does not open automatically on the emulator, find its icon in the app drawer and open it manually.
 
 ## Team Contribution Statement:
-- Maya: Created the initial skeleton that included page navigation to and from each page. Took Tanav’s seat matching algorithm and made a display for the matched seats that take you to the next page depending on which seat you click. Then created the seat layout page with dummy maps (added by Thomas later) and the directional layout page and map. Took notes for our second meeting. 
+- Maya: Created the initial skeleton that included page navigation to and from each page. Contributed to task 1: Took Tanav’s seat matching algorithm and made a display for the matched seats that take you to the next page depending on which seat you click. Then created the seat layout page with dummy maps (added by Thomas later) and the directional layout page and map. Took notes for our second meeting. 
 - Thomas: 
 - Tanav: 
 - Jessica: Contributed to task 2; Worked on layout and logic for the View Buildings path; Building Busyness layout 
