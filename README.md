@@ -1,3 +1,8 @@
+Prototype tasks:
+1. Locate two open seats together to study with a friend.
+2. View information about a building’s seating availability.
+3. Get notified when a specific seat is avaiable.
+
 How to open prototype:
 1. ** do we just wanna tell people to clone the code?
 
