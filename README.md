@@ -4,7 +4,8 @@
 1. Locate two open seats together to study with a friend.
 - Specifc Demo Task: Locate 2 seats with a noise level of 2 in Gateway South.
 2. View information about a building’s seating availability.
-3. Get notified when a specific seat is avaiable.
+3. Get notified when a specific seat is available.
+- Specific Demo Task: Favorite a seat. 
 
 ## Setup
 
