@@ -61,7 +61,7 @@ class SeatMapView : View {
                     x > seat.mapX && x < seat.mapX + SEAT_ICON_SIZE && y > seat.mapY && y < seat.mapY + SEAT_ICON_SIZE
                 }?.let { seat ->
                     // TODO: Show seat info/favorite dialog here.
-                    Toast.makeText(context, "Hello from seat " + seat.id + "!", Toast.LENGTH_SHORT).show()
+                    context.startActivity(SeatDetailActivity.newIntent(context, seat.floorId, seat.id))
                 } }
                 return true
             }
