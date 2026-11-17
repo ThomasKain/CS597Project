@@ -11,14 +11,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter Information"
+        android:text="@string/enter_information"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:labelFor="@+id/spinner_seat_count"
-        android:text="Number of seats" />
+        android:text="@string/number_of_seats" />
 
     <Spinner
         android:id="@id/spinner_seat_count"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:labelFor="@+id/spinner_noise_level"
-        android:text="Maximum noise level (1 = quiet, 5 = loud)" />
+        android:text="@string/maximum_noise_level_1_quiet_5_loud" />
 
     <Spinner
         android:id="@id/spinner_noise_level"
@@ -47,12 +47,12 @@
         android:id="@+id/button_submit_seat_reqs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="@string/submit" />
 
     <Button
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back" />
+        android:text="@string/back" />
 
 </LinearLayout>

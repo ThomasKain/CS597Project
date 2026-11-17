@@ -16,7 +16,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         app:tint="#1E88E5"
         android:src="@android:drawable/ic_dialog_info"
-        android:contentDescription="Information"/>
+        android:contentDescription="@string/information"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find Your Own Seat"
+            android:text="@string/find_your_own_seat"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,13 +38,13 @@
             android:id="@+id/button_find_seat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find a Seat" />
+            android:text="@string/find_a_seat" />
 
         <Button
             android:id="@+id/button_browse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Browse Buildings and Seats" />
+            android:text="@string/browse_buildings_and_seats" />
 
 
     </LinearLayout>
