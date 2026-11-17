@@ -49,6 +49,10 @@ class SeatMapActivity : AppCompatActivity() {
         }
 
         selectFloor1()
+
+        findViewById<Button>(R.id.button_back).setOnClickListener {
+            finish()
+        }
     }
 
     private fun selectFloor1() {
