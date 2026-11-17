@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -11,6 +10,7 @@
     android:layout_marginTop="10dp"
     android:layout_marginEnd="15dp"
     tools:context=".BuildingBusyness">
+
     <Button
         android:id="@+id/button_back_busyness"
         android:layout_width="wrap_content"
@@ -36,43 +36,7 @@
         android:layout_marginBottom="18dp"
         android:textSize="18sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="10dp">
-
-        <Button
-            android:id="@+id/button_babbio_busyness"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/babbio_center"
-            android:textSize="18sp"
-            android:layout_marginEnd="90dp"
-            android:backgroundTint="#ad5075" />
-
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="20dp"
-            android:orientation="horizontal"
-            android:background="#CCCCCC">
-            <!-- Temporary busyness meter - change when layout final -->
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-
-                android:layout_weight="25"
-                android:background="#C0392B" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="75" />
-        </LinearLayout>
-    </LinearLayout>
-
+    <!-- ===== Gateway North ===== -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -85,25 +49,47 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/gateway_north"
+            android:text="Gafteway North"
             android:textSize="18sp"
-            android:layout_marginEnd="90dp"
-            android:backgroundTint="#ad5075" />
+            android:layout_marginEnd="16dp" />
 
         <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:orientation="horizontal"
-            android:background="#CCCCCC">
-            <!-- Temporary busyness meter - change when layout final -->
-            <View
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:background="#C0392B" />
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <!-- Busyness meter: the colored part grows with the % of taken seats -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:background="#CCCCCC">
+
+                <View
+                    android:id="@+id/bar_fill_gnorth"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:background="#C0392B" />
+
+                <View
+                    android:id="@+id/bar_empty_gnorth"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="75" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_gnorth_busyness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="25% full"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 
+    <!-- ===== Gateway South ===== -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,26 +98,46 @@
         android:layout_marginBottom="10dp">
 
         <Button
-            android:id="@+id/button_library_busyness"
+            android:id="@+id/button_gsouth_busyness"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/library"
+            android:text="Gateway South"
             android:textSize="18sp"
-            android:layout_marginEnd="90dp"
-            android:backgroundTint="#ad5075" />
+            android:layout_marginEnd="16dp" />
 
         <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:orientation="horizontal"
-            android:background="#CCCCCC">
-            <!-- Temporary busyness meter - change when layout final -->
-            <View
-                android:layout_width="65dp"
-                android:layout_height="match_parent"
-                android:background="#C0392B" />
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:background="#CCCCCC">
+
+                <View
+                    android:id="@+id/bar_fill_gsouth"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="25"
+                    android:background="#C0392B" />
+
+                <View
+                    android:id="@+id/bar_empty_gsouth"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="75" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_gsouth_busyness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="25% full"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
