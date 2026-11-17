@@ -35,13 +35,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Floor 1" />
+            android:text="@string/floor_1" />
 
         <Button
             android:id="@+id/floor2_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Floor 2" />
+            android:text="@string/floor_2" />
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/back" />
     </LinearLayout>
 </LinearLayout>

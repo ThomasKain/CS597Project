@@ -12,7 +12,7 @@
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Select A Building"
+      android:text="@string/select_a_building"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -22,19 +22,19 @@
       android:id="@+id/button_browse_gateway_north"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Gateway North" />
+      android:text="@string/gateway_north" />
 
   <Button
       android:id="@+id/button_browse_gateway_south"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Gateway South" />
+      android:text="@string/gateway_south" />
 
   <Button
       android:id="@+id/button_back"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Back" />
+      android:text="@string/back" />
 
 
 

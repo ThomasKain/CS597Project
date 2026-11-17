@@ -15,7 +15,7 @@
         android:id="@+id/button_back_busyness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back"
         android:backgroundTint="#636363"
         />
     <View
@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select a building to view current availability."
+        android:text="@string/select_a_building_to_view_current_availability"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +43,34 @@
         android:gravity="center_vertical"
         android:layout_marginBottom="10dp">
 
+        <Button
+            android:id="@+id/button_babbio_busyness"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/babbio_center"
+            android:textSize="18sp"
+            android:layout_marginEnd="90dp"
+            android:backgroundTint="#ad5075" />
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:background="#CCCCCC">
+            <!-- Temporary busyness meter - change when layout final -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_weight="25"
+                android:background="#C0392B" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="75" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -57,7 +85,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Gateway North"
+            android:text="@string/gateway_north"
             android:textSize="18sp"
             android:layout_marginEnd="90dp"
             android:backgroundTint="#ad5075" />
@@ -88,7 +116,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Gateway South"
+            android:text="@string/library"
             android:textSize="18sp"
             android:layout_marginEnd="90dp"
             android:backgroundTint="#ad5075" />

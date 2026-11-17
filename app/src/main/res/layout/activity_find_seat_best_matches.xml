@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Best Seat Matches"
+        android:text="@string/your_best_seat_matches"
         />
 
 <!--    show all seats here which should be buttons a map of where they are-->
@@ -33,6 +33,6 @@
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back" />
+        android:text="@string/back" />
 
 </LinearLayout>

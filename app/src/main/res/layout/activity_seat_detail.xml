@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                android:text="Seat 4"
+                android:text="@string/seat_4"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Gateway South 1st Floor"
+                android:text="@string/gateway_south_1st_floor"
                 android:textSize="18sp" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Available now"
+                android:text="@string/available_now"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Noise level: 2 / 5"
+                android:text="@string/noise_level_2_5"
                 android:textSize="16sp" />
 
             <Button
@@ -57,14 +57,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Get Notified When This Spot Opens Up" />
+                android:text="@string/get_notified_when_this_spot_opens_up" />
 
             <Button
                 android:id="@+id/button_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Back" />
+                android:text="@string/back" />
 
         </LinearLayout>
     </ScrollView>
@@ -77,7 +77,7 @@
         android:layout_gravity="top|end"
         android:layout_margin="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Information"
+        android:contentDescription="@string/information"
         android:src="@android:drawable/ic_dialog_info"
         app:tint="#1E88E5" />
 
