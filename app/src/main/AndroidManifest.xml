@@ -53,6 +53,9 @@
             android:name=".SeatDetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".BuildingBusyness"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         //Browse building and seat button
         findViewById<Button>(R.id.button_browse).setOnClickListener {
-            startActivity(Intent(this, BrowseBuildings::class.java))
+            startActivity(Intent(this, BuildingBusyness::class.java))
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
