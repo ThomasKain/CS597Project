@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Seat Finder</string>
+    <string name="select_a_building">Select A Building</string>
+    <string name="gateway_north">Gateway North</string>
+    <string name="gateway_south">Gateway South</string>
+    <string name="back">Back</string>
+    <string name="select_a_building_to_view_current_availability">Select a building to view current availability.</string>
+    <string name="babbio_center">Babbio Center</string>
+    <string name="library">Library</string>
+    <string name="your_best_seat_matches">Your Best Seat Matches</string>
+    <string name="select_buildings_to_find_seats_within">Select Buildings To Find Seats Within</string>
+    <string name="select_buildings">Select buildings</string>
+    <string name="submit">Submit</string>
+    <string name="directions_map">Directions map</string>
+    <string name="enter_information">Enter Information</string>
+    <string name="number_of_seats">Number of seats</string>
+    <string name="maximum_noise_level_1_quiet_5_loud">Maximum noise level (1 = quiet, 5 = loud)</string>
+    <string name="floor_map">Floor map</string>
+    <string name="take_me_there">Take me there</string>
+    <string name="information">Information</string>
+    <string name="find_your_own_seat">Find Your Own Seat</string>
+    <string name="find_a_seat">Find a Seat</string>
+    <string name="browse_buildings_and_seats">Browse Buildings and Seats</string>
+    <string name="seat_4">Seat 4</string>
+    <string name="gateway_south_1st_floor">Gateway South 1st Floor</string>
+    <string name="available_now">Available now</string>
+    <string name="noise_level_2_5">Noise level: 2 / 5</string>
+    <string name="get_notified_when_this_spot_opens_up">Get Notified When This Spot Opens Up</string>
+    <string name="floor_1">Floor 1</string>
+    <string name="floor_2">Floor 2</string>
 </resources>

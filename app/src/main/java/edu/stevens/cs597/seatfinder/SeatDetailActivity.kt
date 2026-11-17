@@ -82,9 +82,9 @@ class SeatDetailActivity : AppCompatActivity() {
 
         fun updateNotifyButton() {
             notifyButton.text = if (FavoriteSeats.isFavorite(floor.id, seat.id)) {
-                "✓ You'll Be Notified (Tap to Cancel)"
+                "★ Favorited (Tap to Remove)"
             } else {
-                "Get Notified When This Spot Opens Up"
+                "☆ Favorite This Seat"
             }
         }
 
@@ -93,9 +93,9 @@ class SeatDetailActivity : AppCompatActivity() {
         notifyButton.setOnClickListener {
             val nowSaved = FavoriteSeats.toggle(floor.id, seat.id)
             val message = if (nowSaved) {
-                "We'll notify you when Seat ${seat.id} opens up"
+                "Seat ${seat.id} added to your favorites"
             } else {
-                "Notification cancelled"
+                "Removed from favorites"
             }
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             updateNotifyButton()
@@ -104,11 +104,11 @@ class SeatDetailActivity : AppCompatActivity() {
         // 5. Info button: explains what the notify button does
         findViewById<ImageButton>(R.id.information_button).setOnClickListener {
             AlertDialog.Builder(this)
-                .setTitle("Seat Notifications")
+                .setTitle("Favorite Seats")
                 .setMessage(
-                    "Tap \"Get Notified When This Spot Opens Up\" to save this seat. " +
-                        "When it becomes free, we'll send you a notification.\n\n" +
-                        "Tap the button again to stop notifications for this seat."
+                    "Tap \"Favorite This Seat\" to save it to your favorites. " +
+                            "You'll get a notification when a favorited seat becomes free.\n\n" +
+                            "Tap the button again to remove it from your favorites."
                 )
                 .setPositiveButton("Ok") { dialog, _ -> dialog.dismiss() }
                 .show()

@@ -27,20 +27,20 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:scaleType="fitCenter"
-        android:contentDescription="Floor map" />
+        android:contentDescription="@string/floor_map" />
 
     <Button
         android:id="@+id/button_take_me_there"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Take me there" />
+        android:text="@string/take_me_there" />
 
     <Button
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Back" />
+        android:text="@string/back" />
 
 </LinearLayout>
